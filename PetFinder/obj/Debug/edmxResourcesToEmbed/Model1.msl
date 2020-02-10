@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+    <EntitySetMapping Name="ADMINISTRATORS">
+      <EntityTypeMapping TypeName="DatabaseModel.ADMINISTRATORS">
+        <MappingFragment StoreEntitySet="ADMINISTRATORS">
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="companyEmail" ColumnName="companyEmail" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="photoURL" ColumnName="photoURL" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ANNOUNCEMENTS">
+      <EntityTypeMapping TypeName="DatabaseModel.ANNOUNCEMENTS">
+        <MappingFragment StoreEntitySet="ANNOUNCEMENTS">
+          <ScalarProperty Name="announcementID" ColumnName="announcementID" />
+          <ScalarProperty Name="petID" ColumnName="petID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="vetID" ColumnName="vetID" />
+          <ScalarProperty Name="situation" ColumnName="situation" />
+          <ScalarProperty Name="fee" ColumnName="fee" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="approvalSituation" ColumnName="approvalSituation" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PETS">
+      <EntityTypeMapping TypeName="DatabaseModel.PETS">
+        <MappingFragment StoreEntitySet="PETS">
+          <ScalarProperty Name="petID" ColumnName="petID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="petClass" ColumnName="petClass" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="photoURL" ColumnName="photoURL" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="vetID" ColumnName="vetID" />
+          <ScalarProperty Name="approvalSituation" ColumnName="approvalSituation" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="DatabaseModel.USERS">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="photoURL" ColumnName="photoURL" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="approvalSituation" ColumnName="approvalSituation" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VETS">
+      <EntityTypeMapping TypeName="DatabaseModel.VETS">
+        <MappingFragment StoreEntitySet="VETS">
+          <ScalarProperty Name="vetID" ColumnName="vetID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="photoURL" ColumnName="photoURL" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="approvalSituation" ColumnName="approvalSituation" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

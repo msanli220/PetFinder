@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ADMINISTRATORS">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="companyEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="photoURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="isActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ANNOUNCEMENTS">
+    <Key>
+      <PropertyRef Name="announcementID" />
+    </Key>
+    <Property Name="announcementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="petID" Type="Int32" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="vetID" Type="Int32" />
+    <Property Name="situation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fee" Type="Double" />
+    <Property Name="text" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <Property Name="approvalSituation" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <NavigationProperty Name="PETS" Relationship="Self.FK_ANNOUNCEMENTS_PETS" FromRole="ANNOUNCEMENTS" ToRole="PETS" />
+    <NavigationProperty Name="USERS" Relationship="Self.FK_ANNOUNCEMENTS_USERS" FromRole="ANNOUNCEMENTS" ToRole="USERS" />
+    <NavigationProperty Name="VETS" Relationship="Self.FK_ANNOUNCEMENTS_VETS" FromRole="ANNOUNCEMENTS" ToRole="VETS" />
+  </EntityType>
+  <EntityType Name="PETS">
+    <Key>
+      <PropertyRef Name="petID" />
+    </Key>
+    <Property Name="petID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="petClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="age" Type="Int32" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="photoURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="vetID" Type="Int32" />
+    <Property Name="approvalSituation" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <NavigationProperty Name="ANNOUNCEMENTS" Relationship="Self.FK_ANNOUNCEMENTS_PETS" FromRole="PETS" ToRole="ANNOUNCEMENTS" />
+    <NavigationProperty Name="USERS" Relationship="Self.FK_PETS_USERS" FromRole="PETS" ToRole="USERS" />
+    <NavigationProperty Name="VETS" Relationship="Self.FK_PETS_VETS" FromRole="PETS" ToRole="VETS" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="emailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="age" Type="Int32" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="photoURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="approvalSituation" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <NavigationProperty Name="ANNOUNCEMENTS" Relationship="Self.FK_ANNOUNCEMENTS_USERS" FromRole="USERS" ToRole="ANNOUNCEMENTS" />
+    <NavigationProperty Name="PETS" Relationship="Self.FK_PETS_USERS" FromRole="USERS" ToRole="PETS" />
+  </EntityType>
+  <EntityType Name="VETS">
+    <Key>
+      <PropertyRef Name="vetID" />
+    </Key>
+    <Property Name="vetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="emailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="age" Type="Int32" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="photoURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="approvalSituation" Type="Boolean" />
+    <Property Name="isActive" Type="Boolean" />
+    <NavigationProperty Name="ANNOUNCEMENTS" Relationship="Self.FK_ANNOUNCEMENTS_VETS" FromRole="VETS" ToRole="ANNOUNCEMENTS" />
+    <NavigationProperty Name="PETS" Relationship="Self.FK_PETS_VETS" FromRole="VETS" ToRole="PETS" />
+  </EntityType>
+  <Association Name="FK_ANNOUNCEMENTS_PETS">
+    <End Role="PETS" Type="Self.PETS" Multiplicity="0..1" />
+    <End Role="ANNOUNCEMENTS" Type="Self.ANNOUNCEMENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PETS">
+        <PropertyRef Name="petID" />
+      </Principal>
+      <Dependent Role="ANNOUNCEMENTS">
+        <PropertyRef Name="petID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ANNOUNCEMENTS_USERS">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+    <End Role="ANNOUNCEMENTS" Type="Self.ANNOUNCEMENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="ANNOUNCEMENTS">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ANNOUNCEMENTS_VETS">
+    <End Role="VETS" Type="Self.VETS" Multiplicity="0..1" />
+    <End Role="ANNOUNCEMENTS" Type="Self.ANNOUNCEMENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VETS">
+        <PropertyRef Name="vetID" />
+      </Principal>
+      <Dependent Role="ANNOUNCEMENTS">
+        <PropertyRef Name="vetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PETS_USERS">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+    <End Role="PETS" Type="Self.PETS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="PETS">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PETS_VETS">
+    <End Role="VETS" Type="Self.VETS" Multiplicity="0..1" />
+    <End Role="PETS" Type="Self.PETS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VETS">
+        <PropertyRef Name="vetID" />
+      </Principal>
+      <Dependent Role="PETS">
+        <PropertyRef Name="vetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADMINISTRATORS" EntityType="Self.ADMINISTRATORS" />
+    <EntitySet Name="ANNOUNCEMENTS" EntityType="Self.ANNOUNCEMENTS" />
+    <EntitySet Name="PETS" EntityType="Self.PETS" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" />
+    <EntitySet Name="VETS" EntityType="Self.VETS" />
+    <AssociationSet Name="FK_ANNOUNCEMENTS_PETS" Association="Self.FK_ANNOUNCEMENTS_PETS">
+      <End Role="PETS" EntitySet="PETS" />
+      <End Role="ANNOUNCEMENTS" EntitySet="ANNOUNCEMENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ANNOUNCEMENTS_USERS" Association="Self.FK_ANNOUNCEMENTS_USERS">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="ANNOUNCEMENTS" EntitySet="ANNOUNCEMENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ANNOUNCEMENTS_VETS" Association="Self.FK_ANNOUNCEMENTS_VETS">
+      <End Role="VETS" EntitySet="VETS" />
+      <End Role="ANNOUNCEMENTS" EntitySet="ANNOUNCEMENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PETS_USERS" Association="Self.FK_PETS_USERS">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="PETS" EntitySet="PETS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PETS_VETS" Association="Self.FK_PETS_VETS">
+      <End Role="VETS" EntitySet="VETS" />
+      <End Role="PETS" EntitySet="PETS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

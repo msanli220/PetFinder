@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e486899c76714fe198a8b125b0dd135f" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseModel.ADMINISTRATORS" Width="1.5" PointX="0.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.ANNOUNCEMENTS" Width="1.5" PointX="7.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.PETS" Width="1.5" PointX="9.375" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.USERS" Width="1.5" PointX="5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.VETS" Width="1.5" PointX="2.75" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.FK_ANNOUNCEMENTS_PETS" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_ANNOUNCEMENTS_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_ANNOUNCEMENTS_VETS" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_PETS_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_PETS_VETS" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
